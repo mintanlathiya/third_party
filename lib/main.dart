@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/cachednetworkimage_demo.dart';
+import 'package:third_party/convex_bottom_bar_demo.dart';
 import 'package:third_party/shared_demo/textformfield_shared.dart';
 
 Future<void> main() async {
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       //  supportedLocales: [Locale('en','US'),],
-      //localizationsDelegates: [CountryLocalizations.delegate],
+
       debugShowCheckedModeBanner: false,
-      home: CachedNetworkImageDemoUi(),
+      home: ConvexBottombarDemoUi(),
     );
   }
 }
