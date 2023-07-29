@@ -13,6 +13,7 @@ class _InitPhoneFieldDemoUiState extends State<InitPhoneFieldDemoUi> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IntlPhoneField(
             decoration: const InputDecoration(

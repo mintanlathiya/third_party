@@ -14,6 +14,7 @@ class _CountryPickerDemoUiState extends State<CountryPickerDemoUi> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -23,7 +24,7 @@ class _CountryPickerDemoUiState extends State<CountryPickerDemoUi> {
                 initialSelection: 'IN',
                 //showFlag: true,
                 //enabled: true,
-                hideMainText: false,
+                hideMainText: true,
                 //showFlagDialog: true,
                 hideSearch: false,
                 favorite: ['+91', 'IN'],

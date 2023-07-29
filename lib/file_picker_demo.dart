@@ -37,6 +37,8 @@ class _FilePickerDemoUiState extends State<FilePickerDemoUi> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () async {

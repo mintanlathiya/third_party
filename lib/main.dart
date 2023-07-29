@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/connectivity_plus_demo.dart';
+import 'package:third_party/pay_demo.dart';
 import 'package:third_party/shared_demo/textformfield_shared.dart';
 
 Future<void> main() async {
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ConnectivityPlusDemoUi(
-        title: 'Flutter Demo Home Page',
-      ),
+      home: PaySampleApp(
+          //title: 'Flutter Demo Home Page',
+          ),
       // body: FractionallySizedBox(child: FlutterScreenutilDemoUi())
     );
   }

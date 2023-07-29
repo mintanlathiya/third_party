@@ -19,11 +19,11 @@ class _FlutterToAstDemoState extends State<FlutterToAstDemo> {
             ElevatedButton(
               onPressed: () {
                 Fluttertoast.showToast(
-                  msg: 'mintan',
+                  msg: 'mintan lathiya',
                   toastLength: Toast.LENGTH_LONG,
                   gravity: ToastGravity.CENTER_LEFT,
                   timeInSecForIosWeb: 1,
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.redAccent,
                   textColor: Colors.white,
                   fontSize: 16.0,
                 );

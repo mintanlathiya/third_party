@@ -13,39 +13,43 @@ class _RatingDemoUiState extends State<RatingDemoUi> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            RatingBar(
-              minRating: 1,
-              maxRating: 5,
-              initialRating: 3,
-              allowHalfRating: true,
-              //itemCount: 8,
-              itemSize: 48,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 4),
-              //direction: Axis.vertical,
-              glowRadius: 5,
-              glowColor: Colors.lightGreen,
-              glow: false,
-              //tapOnlyMode: true,
-              //ignoreGestures: true,
-              ratingWidget: RatingWidget(
-                full: const Icon(
-                  Icons.star,
-                  color: Colors.amber,
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RatingBar(
+                minRating: 1,
+                maxRating: 5,
+                initialRating: 2.5,
+                allowHalfRating: true,
+                //itemCount: 8,
+                itemSize: 48,
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4),
+                //direction: Axis.vertical,
+                glowRadius: 5,
+                glowColor: Colors.lightGreen,
+                glow: false,
+                //tapOnlyMode: true,
+                //ignoreGestures: true,
+                ratingWidget: RatingWidget(
+                  full: const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  half: const Icon(
+                    Icons.star,
+                    color: Colors.grey,
+                  ),
+                  empty: const Icon(
+                    Icons.star,
+                    color: Colors.grey,
+                  ),
                 ),
-                half: const Icon(
-                  Icons.star,
-                  color: Colors.grey,
-                ),
-                empty: const Icon(
-                  Icons.star,
-                  color: Colors.grey,
-                ),
+                onRatingUpdate: (value) {},
               ),
-              onRatingUpdate: (value) {},
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

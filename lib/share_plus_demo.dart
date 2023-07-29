@@ -63,24 +63,6 @@ class _SharePlusDemoUiState extends State<SharePlusDemoUi> {
             //           text: 'Great picture');
             //     },
             //     child: const Text('Pick Image')),
-
-            // ElevatedButton(
-            //     onPressed: () async {
-            //       // final result = await FilePicker.platform.pickFiles();
-            //       // List<String>? files =
-            //       //     result?.files.map((e) => e.path).cast<String>().toList();
-            //       // if (files == null) return;
-            //       // await Share.shareXFiles(files);
-            //       FilePickerResult? result =
-            //           await FilePicker.platform.pickFiles();
-
-            //       if (result != null) {
-            //         File file = File(result.files.single.path.toString());
-            //       } else {
-            //         // User canceled the picker
-            //       }
-            //     },
-            //     child: const Text('Pick file'))
           ],
         ),
       ),

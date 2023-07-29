@@ -14,6 +14,7 @@ class _AweSomeDialogDemoUiState extends State<AweSomeDialogDemoUi> {
     return Scaffold(
       body: Center(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AnimatedButton(
             text: 'warning dialog',
@@ -102,7 +103,7 @@ class _AweSomeDialogDemoUiState extends State<AweSomeDialogDemoUi> {
             height: 15,
           ),
           AnimatedButton(
-            text: 'error dialog',
+            text: 'info dialog',
             color: Colors.blue,
             pressEvent: () {
               AwesomeDialog(

@@ -20,10 +20,10 @@ class _FlutterScreenutilDemoUiState extends State<FlutterScreenutilDemoUi> {
       builder: (context, child) => Container(
         height: height,
         width: width,
-        color: Colors.red,
+        color: Colors.pinkAccent,
         child: Center(
           child: Container(
-            height: 0.5.sh,
+            height: 0.2.sh,
             width: 1.sw,
             color: Colors.blue,
             child: Center(
