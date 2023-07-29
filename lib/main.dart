@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/convex_bottom_bar_demo.dart';
+import 'package:third_party/pin_put_demo.dart';
 import 'package:third_party/shared_demo/textformfield_shared.dart';
 
 Future<void> main() async {
@@ -14,11 +14,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      //  supportedLocales: [Locale('en','US'),],
-
-      debugShowCheckedModeBanner: false,
-      home: ConvexBottombarDemoUi(),
+    return MaterialApp(
+      // //supportedLocales: [Locale('en', 'US')],
+      // debugShowCheckedModeBanner: false,
+      // home: PinputExample(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          title: const Text('Pinput Example'),
+          centerTitle: true,
+          titleTextStyle: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            color: Color.fromRGBO(30, 60, 87, 1),
+          ),
+        ),
+        body: const FractionallySizedBox(
+          widthFactor: 1,
+          child: PinputExample(),
+        ),
+      ),
     );
   }
 }

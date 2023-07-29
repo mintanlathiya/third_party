@@ -16,6 +16,8 @@ class _CachedNetworkImageDemoUiState extends State<CachedNetworkImageDemoUi> {
       body: Column(
         children: [
           CachedNetworkImage(
+            //imageUrl: 'https://loremflickr.com/320/240/music?lock',
+
             imageUrl:
                 "https://images-eu.ssl-images-amazon.com/images/G/31/img19/Beauty/GW/desktop/Make-up-CC_desktop_1x._SY304_CB466075850_.jpg",
             imageBuilder: (context, imageProvider) => Container(
