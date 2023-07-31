@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/flutter_rating_demo.dart';
-import 'package:third_party/shared_demo/textformfield_shared.dart';
+import 'package:third_party/pay_demo.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await TextFormFieldShard.init;
+  //WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  //await TextFormFieldShard.init;
   // await CounterShared.init;
   runApp(const MyApp());
 }
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
       //themeMode: ThemeMode.system,
 
       debugShowCheckedModeBanner: false,
-      home: RatingDemoUi(
+      home: PaySampleApp(
 
           //title: 'Flutter Demo Home Page',
           ),

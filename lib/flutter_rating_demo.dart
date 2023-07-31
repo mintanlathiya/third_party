@@ -21,7 +21,7 @@ class _RatingDemoUiState extends State<RatingDemoUi> {
               RatingBar(
                 minRating: 1,
                 maxRating: 5,
-                initialRating: 2.5,
+                initialRating: 3.5,
                 allowHalfRating: true,
                 //itemCount: 8,
                 itemSize: 48,

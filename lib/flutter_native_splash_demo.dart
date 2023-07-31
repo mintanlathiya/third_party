@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -15,6 +17,7 @@ class _FlutterNativeSplashDemoUiState extends State<FlutterNativeSplashDemoUi> {
   @override
   void initState() {
     super.initState();
+    Timer(const Duration(seconds: 5), () {});
     initialization();
   }
 

@@ -30,9 +30,9 @@ class _SharePlusDemoUiState extends State<SharePlusDemoUi> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  const weburl = 'https://pub.dev/packages/share_plus';
+                  // const weburl = 'https://pub.dev/packages/share_plus';
                   if (_txtEditingController.value.text.isNotEmpty) {
-                    await Share.share('${_txtEditingController.text}$weburl');
+                    await Share.share(_txtEditingController.text);
                   }
                 },
                 child: const Text('Share Text Msg')),
