@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/permission.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class PermissionHendlerDemo extends StatefulWidget {
   const PermissionHendlerDemo({super.key});
@@ -18,8 +18,13 @@ class _PermissionHendlerDemoState extends State<PermissionHendlerDemo> {
           children: [
             MaterialButton(
               onPressed: () async {
-                await PermissionAsked.checkCemeraPermission();
-                setState(() {});
+                var status = await Permission.camera.status;
+                if (!status.isGranted) {
+                  await Permission.camera.request();
+                }
+                if (await Permission.location.isRestricted) {}
+                // await PermissionAsked.checkCemeraPermission();
+                // setState(() {});
               },
               child: const Text('Cemera Permission'),
             ),
@@ -28,10 +33,16 @@ class _PermissionHendlerDemoState extends State<PermissionHendlerDemo> {
             ),
             MaterialButton(
               onPressed: () async {
-                await PermissionAsked.checkMicroPhonePermission();
-                setState(() {});
+                var status = await Permission.location.status;
+                if (!status.isGranted) {
+                  await Permission.location.request();
+                }
+                if (await Permission
+                    .locationWhenInUse.serviceStatus.isEnabled) {}
+                //await PermissionAsked.checkMicroPhonePermission();
+                // setState(() {});
               },
-              child: const Text('MicroPhone Permission'),
+              child: const Text('location Permission'),
             ),
             const SizedBox(
               height: 15,
