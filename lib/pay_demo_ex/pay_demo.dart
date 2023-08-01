@@ -95,7 +95,8 @@ class _PaySampleAppState extends State<PaySampleApp> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Center(child: Platform.isIOS ? applePayButton : googlePayButton),
+        child: Center(
+            child: Platform.isAndroid ? googlePayButton : applePayButton),
       ),
 
       // body: ListView(
