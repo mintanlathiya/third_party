@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/pay_demo.dart';
+import 'package:third_party/webview_flutter_demo.dart';
 
 Future<void> main() async {
   //WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       //themeMode: ThemeMode.system,
 
       debugShowCheckedModeBanner: false,
-      home: PaySampleApp(
+      home: WebViewFlutterDemoui(
 
           //title: 'Flutter Demo Home Page',
           ),

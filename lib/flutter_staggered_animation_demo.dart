@@ -13,6 +13,9 @@ class _FlutterStaggeredAnimationDemoUiState
     extends State<FlutterStaggeredAnimationDemoUi> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // body: SizedBox(
       //   height: double.infinity,
@@ -69,42 +72,175 @@ class _FlutterStaggeredAnimationDemoUiState
       //     },
       //   ),
       // ),
-      body: AnimationLimiter(
-          child: GridView.builder(
-        itemCount: 12,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          mainAxisSpacing: 3,
-          crossAxisSpacing: 3,
-        ),
-        itemBuilder: (context, index) {
-          return AnimationConfiguration.staggeredGrid(
-            duration: const Duration(seconds: 4),
-            position: index,
-            columnCount: 3,
-            child: FadeInAnimation(
-                child: Container(
-              height: 200,
-              width: 200,
-              alignment: Alignment.center,
-              color: Colors.deepPurpleAccent,
-              child: Text(
-                'Animated ${index + 1}',
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.white),
+      body: Column(
+        children: [
+          AnimationLimiter(
+              child: Expanded(
+            child: GridView.builder(
+              itemCount: 3,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
               ),
-            )),
-          );
-        },
-      )),
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  duration: const Duration(milliseconds: 500),
+                  position: index,
+                  columnCount: 3,
+                  child: FadeInAnimation(
+                      //horizontalOffset: width + 1.5,
+                      // verticalOffset: height + 1.2,
+                      curve: Curves.easeIn,
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurpleAccent,
+                        child: Text(
+                          'Animated ${index + 1}',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      )),
+                );
+              },
+            ),
+          )),
+          AnimationLimiter(
+              child: Expanded(
+            child: GridView.builder(
+              itemCount: 3,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
+              ),
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  duration: const Duration(milliseconds: 500),
+                  position: index,
+                  columnCount: 3,
+                  child: SlideAnimation(
+                      horizontalOffset: width + 1.5,
+                      verticalOffset: height + 1.2,
+                      curve: Curves.easeIn,
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurpleAccent,
+                        child: Text(
+                          'Animated ${index + 1}',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      )),
+                );
+              },
+            ),
+          )),
+          AnimationLimiter(
+              child: Expanded(
+            child: GridView.builder(
+              itemCount: 3,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
+              ),
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  duration: const Duration(milliseconds: 500),
+                  position: index,
+                  columnCount: 3,
+                  child: SlideAnimation(
+                      horizontalOffset: width + 1.5,
+                      //verticalOffset: height + 1.2,
+                      curve: Curves.easeIn,
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurpleAccent,
+                        child: Text(
+                          'Animated ${index + 1}',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      )),
+                );
+              },
+            ),
+          )),
+          AnimationLimiter(
+              child: Expanded(
+            child: GridView.builder(
+              itemCount: 3,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
+              ),
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  duration: const Duration(milliseconds: 500),
+                  position: index,
+                  columnCount: 3,
+                  child: ScaleAnimation(
+                      //horizontalOffset: width + 1.5,
+                      //verticalOffset: height + 1.2,
+                      curve: Curves.easeIn,
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurpleAccent,
+                        child: Text(
+                          'Animated ${index + 1}',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      )),
+                );
+              },
+            ),
+          )),
+          AnimationLimiter(
+              child: Expanded(
+            child: GridView.builder(
+              itemCount: 3,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
+              ),
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  duration: const Duration(milliseconds: 500),
+                  position: index,
+                  columnCount: 3,
+                  child: FlipAnimation(
+                      //horizontalOffset: width + 1.5,
+                      //verticalOffset: height + 1.2,
+                      curve: Curves.easeIn,
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurpleAccent,
+                        child: Text(
+                          'Animated ${index + 1}',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      )),
+                );
+              },
+            ),
+          )),
+        ],
+      ),
     );
   }
-
-  CardColumnScreen() {}
-
-  CardGridScreen() {}
-
-  CardListScreen() {}
-
-  YourListChild() {}
 }

@@ -17,6 +17,7 @@ class _FilesPageState extends State<FilesPage> {
     return Scaffold(
       body: Center(
         child: GridView.builder(
+          //itemCount: ,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, crossAxisSpacing: 8, mainAxisSpacing: 8),
           itemBuilder: (context, index) {

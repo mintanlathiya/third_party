@@ -50,7 +50,7 @@ class _FilePickerDemoUiState extends State<FilePickerDemoUi> {
                 if (result == null) return;
                 //open single file
                 final file = result.files.first;
-                //openFile(file);
+                openFile(file);
                 openFiles(result.files);
 
                 print('Name: ${file.name}');
