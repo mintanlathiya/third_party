@@ -9,6 +9,7 @@ class CountryPickerDemoUi extends StatefulWidget {
 }
 
 class _CountryPickerDemoUiState extends State<CountryPickerDemoUi> {
+  String selectedCountry = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +44,9 @@ class _CountryPickerDemoUiState extends State<CountryPickerDemoUi> {
                 //Optional. Shows phone code before the country name.
                 showPhoneCode: true,
                 onSelect: (Country country) {
+                  selectedCountry = country.displayName;
                   print('Select country: ${country.displayName}');
+                  setState(() {});
                 },
                 // Optional. Sets the theme for the country list picker.
                 countryListTheme: CountryListThemeData(
@@ -73,6 +76,7 @@ class _CountryPickerDemoUiState extends State<CountryPickerDemoUi> {
             },
             child: const Text('Show country picker'),
           ),
+          Text(selectedCountry),
         ],
       ),
     ));

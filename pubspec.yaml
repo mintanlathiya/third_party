@@ -59,6 +59,8 @@ dependencies:
   geolocator: ^9.0.2
   webview_flutter: ^4.2.2
   share_plus: ^7.0.2
+  image_preview: ^1.0.4
+  file_selector: ^1.0.0
   http: ^1.1.0 
   path_provider: ^2.0.15
   file_picker: ^5.3.3
@@ -90,6 +92,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/34.jpeg
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -17,7 +17,6 @@ class _FlutterNativeSplashDemoUiState extends State<FlutterNativeSplashDemoUi> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 5), () {});
     initialization();
   }
 
@@ -27,13 +26,14 @@ class _FlutterNativeSplashDemoUiState extends State<FlutterNativeSplashDemoUi> {
   }
 
   void initialization() async {
-    print('ready in 3...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 2...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 1...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('go!');
+    await Future.delayed(const Duration(seconds: 2));
+    // print('ready in 3...');
+    // await Future.delayed(const Duration(seconds: 1));
+    // print('ready in 2...');
+    // await Future.delayed(const Duration(seconds: 1));
+    // print('ready in 1...');
+    // await Future.delayed(const Duration(seconds: 1));
+    // print('go!');
     FlutterNativeSplash.remove();
   }
 
