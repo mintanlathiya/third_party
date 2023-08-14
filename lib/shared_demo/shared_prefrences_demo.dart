@@ -22,7 +22,7 @@ class _SharedDemoState extends State<SharedDemo> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           CounterShared.setCounter = ++counter;
-        
+
           setState(() {});
         },
         child: const Icon(Icons.add),

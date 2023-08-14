@@ -1,12 +1,10 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:third_party/flutter_native_splash_demo.dart';
+import 'package:third_party/shared_demo/shared_prefrenceex_demo.dart';
 
 Future<void> main() async {
   //WidgetsFlutterBinding.ensureInitialized();
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   //await TextFormFieldShard.init;
   // await CounterShared.init;
@@ -18,10 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
 
-      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
+      //theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
       //theme: FlexThemeData.light(scheme: FlexScheme.espresso),
       // The Mandy red, dark theme.
       //darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
@@ -31,10 +29,15 @@ class MyApp extends StatelessWidget {
       //themeMode: ThemeMode.system,
 
       debugShowCheckedModeBanner: false,
-      home: const FlutterNativeSplashDemoUi(
+      home: SharedPrefrenceExDemo(
 
-          //title: 'Flutter Demo Home Page',
+          //title: 'Flutter Demo Home Page',p
           ),
+      // getPages: [
+      //   GetPage(name: '/', page: () => const HomeScreen()),
+      //   GetPage(name: '/song', page: () => const SongScreen()),
+      //   GetPage(name: '/playlist', page: () => const PlaylistScreen()),
+      // ],
       // body: FractionallySizedBox(child: FlutterScreenutilDemoUi())
     );
   }
