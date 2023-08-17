@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/shared_demo/textformfield_shared.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefrenceExDemo extends StatefulWidget {
   const SharedPrefrenceExDemo({super.key});
@@ -9,10 +9,28 @@ class SharedPrefrenceExDemo extends StatefulWidget {
 }
 
 class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
+  String nameSp = '';
+  String surNameSp = '';
+  String ageSp = '';
+
+  SharedPreferences? pref;
+  final TextEditingController txtNameEditingController =
+      TextEditingController();
+  final TextEditingController txtSurNameEditingController =
+      TextEditingController();
+  final TextEditingController txtAgeEditingController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
-    TextFormFieldShard.getValue();
+    getValue();
+  }
+
+  void getValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    nameSp = pref.getString('name') ?? '';
+    surNameSp = pref.getString('surName') ?? '';
+    ageSp = pref.getString('age') ?? '';
     setState(() {});
   }
 
@@ -25,7 +43,7 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
           child: Column(
             children: [
               TextField(
-                controller: TextFormFieldShard.txtNameEditingController,
+                controller: txtNameEditingController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Name',
@@ -36,7 +54,7 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
                 height: 5,
               ),
               TextField(
-                controller: TextFormFieldShard.txtSurNameEditingController,
+                controller: txtSurNameEditingController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'SurName',
@@ -47,7 +65,7 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
                 height: 5,
               ),
               TextField(
-                controller: TextFormFieldShard.txtAgeEditingController,
+                controller: txtAgeEditingController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Age',
@@ -57,12 +75,18 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
               const SizedBox(
                 height: 5,
               ),
-              const SizedBox(
-                height: 5,
-              ),
               MaterialButton(
-                onPressed: () {
-                  TextFormFieldShard.setValue();
+                onPressed: () async {
+                  SharedPreferences pref =
+                      await SharedPreferences.getInstance();
+                  pref.setString('name', txtNameEditingController.text);
+                  pref.setString('surName', txtSurNameEditingController.text);
+                  pref.setString('age', txtAgeEditingController.text);
+                  nameSp = pref.getString('name') ?? '';
+                  surNameSp = pref.getString('surName') ?? '';
+                  ageSp = pref.getString('age') ?? '';
+                  //TextFormFieldShard.addUser();
+                  //log(TextFormFieldShard.userData.toString());
                   setState(() {});
                 },
                 child: const Text('Submit'),
@@ -72,12 +96,9 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                          'Name :  ${TextFormFieldShard.txtNameEditingController.text}'),
-                      Text(
-                          'SurName :  ${TextFormFieldShard.txtSurNameEditingController.text}'),
-                      Text(
-                          'Age :  ${TextFormFieldShard.txtAgeEditingController.text}'),
+                      Text('Name :  $nameSp'),
+                      Text('SurName :  $surNameSp'),
+                      Text('Age :  $ageSp'),
                     ],
                   )
                 ],
