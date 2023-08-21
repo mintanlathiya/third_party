@@ -12,6 +12,7 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
   String nameSp = '';
   String surNameSp = '';
   String ageSp = '';
+  String userData = [].toString();
 
   SharedPreferences? pref;
   final TextEditingController txtNameEditingController =
@@ -91,17 +92,17 @@ class _SharedPrefrenceExDemoState extends State<SharedPrefrenceExDemo> {
                 },
                 child: const Text('Submit'),
               ),
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Name :  $nameSp'),
-                      Text('SurName :  $surNameSp'),
-                      Text('Age :  $ageSp'),
-                    ],
-                  )
-                ],
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Name :  $nameSp'),
+                    Text('SurName :  $surNameSp'),
+                    Text('Age :  $ageSp'),
+                  ],
+                ),
               )
             ],
           ),

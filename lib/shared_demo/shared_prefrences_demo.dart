@@ -9,20 +9,20 @@ class SharedDemo extends StatefulWidget {
 }
 
 class _SharedDemoState extends State<SharedDemo> {
-  int counter = CounterShared.getCounter;
+  int count = CounterShared.getCounter;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Text(
-          counter.toString(),
+          count.toString(),
           style: const TextStyle(fontSize: 30),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          CounterShared.setCounter = ++counter;
-
+          CounterShared.setCounter = ++count;
           setState(() {});
         },
         child: const Icon(Icons.add),

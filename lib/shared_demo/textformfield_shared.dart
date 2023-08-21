@@ -5,7 +5,6 @@ class TextFormFieldShard {
   static String nameSp = '';
   static String surNameSp = '';
   static String ageSp = '';
-  static List userData = [];
   static int selectedIndex = 0;
 
   static SharedPreferences? pref;
@@ -18,10 +17,6 @@ class TextFormFieldShard {
       TextEditingController();
 
   static void setValue() async {
-    //SharedPreferences pref = await SharedPreferences.getInstance();
-    // pref.setString(SharedKey.name, txtNameEditingController.text);
-    // pref.setString(SharedKey.surName, txtSurNameEditingController.text);
-    // pref.setString(SharedKey.age, txtAgeEditingController.text);
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setString(SharedKey.name, txtNameEditingController.text);
     pref.setString(SharedKey.surName, txtSurNameEditingController.text);
@@ -30,14 +25,18 @@ class TextFormFieldShard {
 
   static void getValue() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    // txtNameEditingController.text = pref.getString(SharedKey.name) ?? '';
-    // txtSurNameEditingController.text = pref.getString(SharedKey.surName) ?? '';
-    // txtAgeEditingController.text = pref.getString(SharedKey.age) ?? '';
-
     nameSp = pref.getString(SharedKey.name) ?? '';
     surNameSp = pref.getString(SharedKey.surName) ?? '';
     ageSp = pref.getString(SharedKey.age) ?? '';
   }
+
+  String userData = [
+    {
+      'Name': txtNameEditingController.text,
+      'SurName': txtSurNameEditingController.text,
+      'Age': txtAgeEditingController.text,
+    }
+  ].toString();
 
   // static void addUser() {
   //   userData.add({
@@ -47,17 +46,24 @@ class TextFormFieldShard {
   //   });
   // }
 
+  // String data = [
+  //   {
+  //     'name'
+  //   }
+  // ];
+
   static void clearUserdata() {
     txtNameEditingController.clear();
     txtSurNameEditingController.clear();
     txtAgeEditingController.clear();
   }
 
-  static void toTapAdd() {
-    txtNameEditingController.text = userData[selectedIndex]['Name'];
-    txtSurNameEditingController.text = userData[selectedIndex]['SurName'];
-    txtAgeEditingController.text = userData[selectedIndex]['Age'];
-  }
+//   static void toTapAdd() {
+//     txtNameEditingController.text = userData[selectedIndex][SharedKey.name];
+//     txtSurNameEditingController.text =
+//         userData[selectedIndex][SharedKey.surName];
+//     txtAgeEditingController.text = userData[selectedIndex][SharedKey.age];
+//   }
 }
 
 class SharedKey {

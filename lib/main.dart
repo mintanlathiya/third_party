@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:third_party/shared_demo/shared_prefrenceex_demo.dart';
+import 'package:third_party/shared_demo/counter_shared.dart';
+
+import 'shared_demo/shared_prefrences_demo.dart';
 
 Future<void> main() async {
   //WidgetsFlutterBinding.ensureInitialized();
@@ -7,7 +9,7 @@ Future<void> main() async {
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   //await TextFormFieldShard.init;
-  // await CounterShared.init;
+  await CounterShared.init;
   runApp(const MyApp());
 }
 
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       //themeMode: ThemeMode.system,
 
       debugShowCheckedModeBanner: false,
-      home: SharedPrefrenceExDemo(
+      home: SharedDemo(
 
           //title: 'Flutter Demo Home Page',p
           ),
