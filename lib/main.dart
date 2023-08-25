@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:third_party/razorpay_demo.dart';
 import 'package:third_party/shared_demo/counter_shared.dart';
-
-import 'shared_demo/shared_prefrences_demo.dart';
 
 Future<void> main() async {
   //WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       //themeMode: ThemeMode.system,
 
       debugShowCheckedModeBanner: false,
-      home: SharedDemo(
+      home: RaZorPayDemoUi(
 
           //title: 'Flutter Demo Home Page',p
           ),
